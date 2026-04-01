@@ -166,6 +166,30 @@
   </div>
 </section>
 
+  <pre>
+    <h2>Share This Page 🙏</h2>
+
+<a href="https://wa.me/?text=Jai Maa Kali 🙏 Visit this site: https://anishraj7435739-netizen.github.io/MAA_KALI_POOJA_SITE/" target="_blank">
+  <button>Share on WhatsApp</button>
+</a>
+
+<button onclick="sharePage()">Share</button>
+
+<script>
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: "Maa Kali Pooja",
+      text: "Jai Maa Kali 🙏",
+      url: window.location.href
+    });
+  } else {
+    alert("Sharing not supported on this device");
+  }
+}
+</script>
+  </pre>
+
 <section id="contact">
   <div class="card">
     <h2>Contact</h2>
