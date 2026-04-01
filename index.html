@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Village Pooja Festival</title>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body { margin: 0; font-family: Arial, sans-serif; background: #fff8f0; color: #333; }
+
+    header { 
+      background: linear-gradient(to right, #8b0000, #b22222);
+      color: white; 
+      padding: 20px; 
+      text-align: center; 
+    }
+
+    .header-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav { background: #ffcc70; padding: 10px; text-align: center; }
+    nav a { margin: 0 15px; text-decoration: none; color: #000; font-weight: bold; }
+
+    section { padding: 30px; }
+
+    .card { 
+      background: white; 
+      padding: 20px; 
+      margin: 20px 0; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 15px; 
+    }
+
+    .gallery img { 
+      width: 100%; 
+      border-radius: 10px; 
+      height: 200px; 
+      object-fit: cover; 
+      cursor: pointer;
+    }
+
+    iframe { width: 100%; border: none; border-radius: 10px; height: 300px; }
+
+    video {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    footer { background: #8b0000; color: white; text-align: center; padding: 15px; }
+
+    .btn {
+      display: inline-block;
+      background: #8b0000;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-box">
+    <!-- FIXED PATH -->
+    <img src="media/KALIII.JPG" alt="Logo" width="80">
+    <div>
+      <h1>MAA KALI POOJA, SAHAJPURA</h1>
+      <p>Celebrating Tradition, Culture & Devotion</p>
+      <p>🙏 SHRI DAKSHINI MAHAKALI POOJA SAMITI APKA SWAGAT KARTA HAI 🙏</p>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#location">Location</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <div class="card">
+    <h2>About the Pooja</h2>
+    <p><b><mark>KALI POOJA</mark> is a sacred tradition bringing families together every year.</b></p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>History</h2>
+    <p>This Kali Pooja has been celebrated in Sahajpura for over 90 years.</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Donate</h2>
+    <p>Support the Pooja 🙏</p>
+    <button onclick="alert('UPI: kalipoojaasahajpura@upi')">Donate Now</button>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="card">
+    <h2>Event Schedule</h2>
+    <ul>
+      <li>Morning Pooja - 6:00 AM</li>
+      <li>Special Rituals - 10:00 AM</li>
+      <li>Evening Aarti - 6:30 PM</li>
+    </ul>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <!-- FIXED PATHS -->
+      <img src="media/kaliji.jpg" alt="Kali Maa" onclick="window.open(this.src)">
+      <img src="media/KALIII.JPG" alt="Kali Maa" onclick="window.open(this.src)">
+      <img src="media/visarjan.jpg" alt="Kali Maa" onclick="window.open(this.src)">
+    </div>
+
+    <h2>Video</h2>
+
+    <!-- FIXED VIDEO PATHS -->
+<video controls width="300">
+  <source src="media/kalima.mp4" type="video/mp4">
+</video>
+
+  </div>
+</section>
+
+<section id="location">
+  <div class="card">
+    <h2>Location</h2>
+    <iframe src="https://www.google.com/maps?q=24.918497,85.417010&output=embed"></iframe>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Contact on WhatsApp</h2>
+    <a class="btn" href="https://wa.me/919199379192" target="_blank">Chat Now</a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: kalipoojasahajpura12@gmail.com</p>
+    <p>Phone: +91 9199379192</p>
+    <p>Phone: +91 6206547299</p>
+  </div>
+</section>
+
+<footer>
+  <p>  (SHREE KAALI PUJA SAMITI)</p>
+</footer>
+
+</body>
+</html>
