@@ -114,15 +114,34 @@
 </section>
 
 <section>
-    <div class="donate-container">
-        <h2>Donate</h2>
-        <p class="subtitle">Support the Pooja 🙏</p>
-        
-        <!-- The UPI Deep Link -->
-        <a href="upi://pay?pa=anishraj74357391@ybl&pn=Pooja Support&cu=INR" class="donate-btn">
-            Donate Now
-        </a>
+  <div class="donate-container">
+    <h2>Donate</h2>
+    <p class="subtitle">Support the Pooja 🙏</p>
+
+    <!-- The Improved UPI Deep Link -->
+    <!-- 
+      pa: Your VPA 
+      pn: Name (Encoded %20 for spaces)
+      tn: Transaction Note (Helps the bank verify the link)
+      am: Amount (Left blank so user can enter it, but note/mc added for stability)
+      cu: Currency
+      mc: Merchant Code (0000 is generic for unclassified)
+    -->
+    <a href="upi://pay?pa=anishraj74357391@ybl&pn=Pooja%20Support&tn=Contribution%20for%20Pooja&mc=0000&cu=INR" class="donate-btn">
+      Donate via UPI App
+    </a>
+
+    <div style="margin-top: 20px;">
+      <p style="font-size: 0.8rem; color: #666;">
+        Clicking from mobile? Use the button above.<br>
+        On a computer? Scan the QR code below.
+      </p>
+      
+      <!-- Placeholder for a QR Code -->
+      <!-- Tip: You can generate a free QR code of your UPI ID and put the image here -->
+      <img src="YOUR_QR_CODE_IMAGE_URL" alt="UPI QR Code" style="width: 200px; margin-top: 10px; border: 1px solid #ddd; padding: 10px; border-radius: 8px;">
     </div>
+  </div>
 </section>
 
   <section>
