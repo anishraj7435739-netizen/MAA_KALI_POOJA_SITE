@@ -1,59 +1,1022 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maa Kali Pooja Site</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maa Kali Pooja - A sacred tradition celebrating devotion, culture, and spiritual awakening in Sahajpura for over 90 years.">
+  <meta name="keywords" content="Kali Pooja, Sahajpura, Maa Kali, Hindu Festival, Pooja Ceremony">
+  <meta name="theme-color" content="#8b0000">
+  
+  <link rel="icon" type="image/x-icon" href="media/KALIII.JPG">
+  <link rel="apple-touch-icon" href="media/KALIII.JPG">
+  
+  <title>Maa Kali Pooja, Sahajpura 🙏 - Sacred Festival</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #8b0000;
+      --secondary-color: #b22222;
+      --accent-color: #ffcc70;
+      --light-bg: #fff8f0;
+      --text-dark: #333;
+      --text-light: #666;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 20px 15px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: padding 0.3s ease;
+    }
+
+    header.shrink {
+      padding: 10px 15px;
+    }
+
+    .header-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+
+    header.shrink .header-logo {
+      width: 50px;
+      height: 50px;
+    }
+
+    .header-content h1 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      margin-bottom: 8px;
+      line-height: 1.2;
+      transition: font-size 0.3s ease;
+    }
+
+    header.shrink .header-content h1 {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .header-content p {
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      margin: 4px 0;
+      opacity: 0.95;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: var(--accent-color);
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 140px;
+      z-index: 50;
+      transition: top 0.3s ease;
+    }
+
+    header.shrink ~ nav {
+      top: 80px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      padding: 12px 16px;
+      display: inline-block;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      white-space: nowrap;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    nav a:active {
+      background: rgba(139, 0, 0, 0.2);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 30px 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      color: var(--primary-color);
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      border-left: 5px solid var(--primary-color);
+    }
+
+    .card h2 {
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    .card p {
+      color: var(--text-light);
+      line-height: 1.8;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .card ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .card li {
+      margin: 8px 0;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    /* ===== ABOUT HIGHLIGHT ===== */
+    .about-highlight {
+      background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(178, 34, 34, 0.1));
+      padding: 16px;
+      border-radius: 8px;
+      border-left: 5px solid var(--accent-color);
+    }
+
+    .about-highlight h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+    }
+
+    .about-highlight mark {
+      background: var(--accent-color);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    /* ===== SCHEDULE ===== */
+    .schedule-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .schedule-list li {
+      padding: 12px;
+      margin: 10px 0;
+      background: linear-gradient(135deg, #fff8f0, #ffe8d1);
+      border-left: 5px solid var(--accent-color);
+      border-radius: 5px;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .schedule-list li::before {
+      content: '🔔 ';
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 20px 0;
+      scroll-behavior: smooth;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      min-width: 100%;
+    }
+
+    .gallery-item {
+      flex: 0 0 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      aspect-ratio: 1;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+    }
+
+    .gallery-item:active .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      color: white;
+      font-size: 2rem;
+    }
+
+    @media (min-width: 769px) {
+      .gallery-container {
+        overflow-x: visible;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        min-width: unset;
+      }
+
+      .gallery-item {
+        flex: unset;
+        max-width: unset;
+      }
+    }
+
+    /* ===== VIDEO ===== */
+    .video-container {
+      text-align: center;
+      margin: 20px 0;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    video {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    /* ===== MAP ===== */
+    .map-container {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 300px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* ===== DONATION ===== */
+    .donate-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 25px 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .donate-section h2 {
+      color: white;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 10px;
+    }
+
+    .donate-subtitle {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    .donate-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 15px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--primary-color);
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid white;
+      cursor: pointer;
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      appearance: none;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .qr-code {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .qr-code img {
+      max-width: 180px;
+      width: 100%;
+      border: 3px solid white;
+      border-radius: 8px;
+      padding: 8px;
+      background: white;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #fff8f0, #ffe8d1);
+      padding: 18px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid var(--accent-color);
+    }
+
+    .contact-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 8px;
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+    }
+
+    .contact-card p {
+      color: var(--text-light);
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    }
+
+    .contact-card a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ===== SHARE ===== */
+    .share-section {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 20px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .share-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-social {
+      padding: 10px 16px;
+      font-size: clamp(0.8rem, 2vw, 0.95rem);
+      flex: 1;
+      min-width: 100px;
+    }
+
+    /* ===== COUNTDOWN ===== */
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .countdown-item {
+      background: var(--accent-color);
+      padding: 15px 10px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .countdown-number {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .countdown-label {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      margin-top: 4px;
+    }
+
+    /* ===== SCROLL TO TOP ===== */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 200;
+      font-size: 1.5rem;
+      border: none;
+      padding: 0;
+      appearance: none;
+      pointer-events: none;
+    }
+
+    .scroll-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scroll-to-top:active {
+      background: var(--secondary-color);
+      transform: scale(0.95);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin: 8px 0;
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+    }
+
+    .footer-year {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      header {
+        padding: 15px 10px;
+      }
+
+      .header-logo {
+        width: 60px;
+        height: 60px;
+      }
+
+      section {
+        padding: 20px 10px;
+      }
+
+      nav {
+        top: 110px;
+      }
+
+      .card {
+        padding: 12px;
+      }
+
+      iframe {
+        height: 200px;
+      }
+
+      .qr-code img {
+        max-width: 150px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      header {
+        padding: 12px 8px;
+      }
+
+      .header-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      nav a {
+        padding: 8px 8px;
+        font-size: 0.75rem;
+      }
+
+      .btn {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Maa Kali Pooja</h1>
-        <nav>
-            <ul>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#donate">Donations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="pooja">
-            <h2>Welcome to Maa Kali Pooja</h2>
-            <p>Embrace the divine presence of Maa Kali in your life.</p>
-        </section>
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <img src="gallery/image1.jpg" alt="Gallery Image 1">
-            <img src="gallery/image2.jpg" alt="Gallery Image 2">
-        </section>
-        <section id="videos">
-            <h2>Videos</h2>
-            <video controls>
-                <source src="videos/pooja_video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
-        <section id="donate">
-            <h2>Donations</h2>
-            <p>Your contributions help keep the pooja alive.</p>
-            <button>Donate Now</button>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <input type="submit" value="Submit">
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Maa Kali Pooja. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-box">
+      <img src="media/KALIII.JPG" alt="Maa Kali Logo" class="header-logo">
+      <div class="header-content">
+        <h1><b>🙏श्री दक्षिणी महाकाली पूजा🙏</b></h1>
+        <h2>स्थल-सहजपुरा</h2>
+        <p>Devotion & Culture</p>
+        <p style="font-size: 0.85rem;">90+ Years of Tradition</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav id="nav-menu">
+    <a href="#about">About</a>
+    <a href="#history">History</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#location">Location</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" data-aos="fade-up">
+    <h2 class="section-title">About the Pooja</h2>
+    <div class="card">
+      <div class="about-highlight">
+        <h3>🌟 Sacred Celebration</h3>
+        <p><strong><mark>KALI POOJA</mark> is a sacred tradition bringing families together every year.</strong></p>
+        <p style="margin-top: 12px;">This divine festival celebrates the goddess Kali, symbolizing the victory of good over evil and the power of feminine divine energy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY SECTION -->
+  <section id="history">
+    <h2 class="section-title">Our Legacy</h2>
+    <div class="card">
+      <h2>📜 90+ Year Tradition</h2>
+      <p>This Kali Pooja has been celebrated in Sahajpura for over 90 years, passed down through generations.</p>
+      <p style="margin-top: 12px;"><strong>Key Milestones:</strong></p>
+      <ul>
+        <li>✓ Started 90+ years ago</li>
+        <li>✓ Community-wide celebration</li>
+        <li>✓ Traditional rituals maintained</li>
+        <li>✓ Spiritual growth inspiring</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SCHEDULE SECTION -->
+  <section id="schedule">
+    <h2 class="section-title">Event Schedule</h2>
+    <div class="card">
+      <h2>Daily Schedule</h2>
+      <ul class="schedule-list">
+        <li><strong>Morning Pooja</strong> - 6:00 AM</li>
+        <li><strong>Special Rituals</strong> - 10:00 AM</li>
+        <li><strong>Evening Aarti</strong> - 6:30 PM</li>
+        <li><strong>Community Dinner</strong> - 8:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>⏳ Countdown to Next Pooja</h2>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">0</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">0</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">0</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">0</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <h2 class="section-title">Gallery</h2>
+    
+    <div class="card">
+      <h2>📸 Festival Moments</h2>
+      <div class="gallery-container">
+        <div class="gallery">
+          <div class="gallery-item" onclick="openImage('media/kaliji.jpg')">
+            <img src="media/kaliji.jpg" alt="Maa Kali Idol" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/KALIII.JPG')">
+            <img src="media/KALIII.JPG" alt="Maa Kali Divine" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/sa.jpg')">
+            <img src="media/sa.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/sah.jpg')">
+            <img src="media/sah.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/saha.jpg')">
+            <img src="media/saha.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/m.jpg')">
+            <img src="media/m.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/mi.jpg')">
+            <img src="media/mi.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/mitt.jpg')">
+            <img src="media/mitt.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media1/k.jpg')">
+            <img src="media1/k.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media1/ku.jpg')">
+            <img src="media1/ku.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media1/kunal.jpg')">
+            <img src="media1/kunal.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media1/ki.jpg')">
+            <img src="media1/ki.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media1/kiii.jpg')">
+            <img src="media1/kiii.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media1/kite.jpg')">
+            <img src="media1/kite.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media1/wep.jpg')">
+            <img src="media1/wep.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openImage('media/anish.jpg')">
+            <img src="media/anish.jpg" alt="Maa Kali" loading="lazy">
+            <div class="gallery-overlay">
+              <span>🔍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎬 Festival Video</h2>
+      <div class="video-container">
+        <video controls playsinline>
+          <source src="media/kalima.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-container">
+        <video controls playsinline>
+          <source src="media/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎵 Maa Kali Mantra</h2>
+      <a href="https://www.youtube.com/watch?v=cerKiPGqPeQ&list=RDcerKiPGqPeQ&start_radio=1" target="_blank" class="btn btn-primary">▶️ Listen on YouTube</a>
+    </div>
+  </section>
+
+  <!-- LOCATION SECTION -->
+  <section id="location">
+    <h2 class="section-title">📍 Location</h2>
+    <div class="card">
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.3983200588614!2d85.41958509999999!3d24.9184971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f2e3684960910f%3A0xc12345678!2sSahajpura%2C%20BIHAR%2C%20India!5e0!3m2!1sen!2sin!4v1234567890"></iframe>
+      </div>
+      <p style="margin-top: 12px; text-align: center; color: var(--text-light); font-size: 0.95rem;">
+        <strong>Sahajpura, BIHAR, India</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- DONATION SECTION -->
+  <section id="donate">
+    <div class="donate-section">
+      <h2>🙏 Support the Pooja</h2>
+      <p class="donate-subtitle">Help us maintain this sacred tradition</p>
+      
+      <div class="donate-buttons">
+        <a href="upi://pay?pa=anishraj74357391@ybl&pn=Pooja%20Support&tn=Contribution%20for%20Pooja&mc=0000&cu=INR" class="btn">💳 Donate via UPI</a>
+      </div>
+
+      <div class="qr-code">
+        <p style="margin-bottom: 12px; font-size: 0.95rem;">Scan to donate:</p>
+        <img src="media/qr.png" alt="UPI QR Code" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- SHARE SECTION -->
+  <section>
+    <div class="share-section">
+      <h2>🤝 Share This Blessing</h2>
+      <div class="share-buttons">
+        <a href="https://wa.me/?text=Jai%20Maa%20Kali%20🙏%20Visit%20https://anishraj7435739-netizen.github.io/MAA_KALI_POOJA_SITE/" target="_blank" class="btn btn-social">💬 WhatsApp</a>
+        <button class="btn btn-social" onclick="sharePage()">📤 Share</button>
+        <button class="btn btn-social" onclick="copyLink()">🔗 Copy</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2 class="section-title">📞 Contact Us</h2>
+    <div class="contact-info">
+      <div class="contact-card">
+        <h3>📧 Email</h3>
+        <p><a href="mailto:kalipoojasahajpura12@gmail.com">Contact</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>📱 Phone 1</h3>
+        <p><a href="tel:+919199379192">+91 9199379192</a></p>
+        <a href="https://wa.me/919199379192" target="_blank" class="btn btn-social" style="margin-top: 8px; padding: 6px 10px; font-size: 0.85rem;">WhatsApp</a>
+      </div>
+      <div class="contact-card">
+        <h3>📱 Phone 2</h3>
+        <p><a href="tel:+916206547299">+91 6205047299</a></p>
+        <a href="https://wa.me/916206547299" target="_blank" class="btn btn-social" style="margin-top: 8px; padding: 6px 10px; font-size: 0.85rem;">WhatsApp</a>
+      </div>
+      <div class="contact-card">
+        <h3>📱 Phone 3</h3>
+        <p><a href="tel:+918862930553">+91 8862930553</a></p>
+        <a href="https://wa.me/918862930553" target="_blank" class="btn btn-social" style="margin-top: 8px; padding: 6px 10px; font-size: 0.85rem;">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section id="Website">
+    <h2>Connect with us</h2>
+    <a href="https://youtube.com/@drx_bhumihar_ak?si=1UedYAoo1hzZRKDC" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" style="height:24px;">
+    </a>
+    <div>
+      <a href="https://www.instagram.com/ig_anish_singh/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="height:24px;">
+      </a>
+    </div>
+    <div>
+      <a href="https://facebook.com/Anish Singh Jii" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="height:24px;">
+      </a>
+    </div>
+  </section>
+    
+  <!-- FOOTER -->
+  <footer>
+    <p>🙏 Shree Dakshini Mahakali Pooja Samiti apka swagat karta hai🙏</p>
+    <p>90+ Years of Sacred Tradition</p>
+    <p class="footer-year"> <span id="year"></span> Maa Kali Pooja, Sahajpura</p>
+  </footer>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()"></button>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ===== HEADER COLLAPSE ON SCROLL =====
+    let lastScroll = 0;
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 50) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+      
+      lastScroll = currentScroll;
+    });
+
+    // ===== SCROLL TO TOP BUTTON =====
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+      scrollToTopBtn.classList.toggle('show', window.pageYOffset > 300);
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ===== SHARE PAGE =====
+    function sharePage() {
+      const shareData = {
+        title: "Maa Kali Pooja, Sahajpura 🙏",
+        text: "Join us in celebrating 90+ years of sacred tradition!",
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(err => {
+          if (err.name !== 'AbortError') {
+            console.error('Error sharing:', err);
+          }
+        });
+      } else {
+        alert('Sharing not supported. Try copying the link instead!');
+      }
+    }
+
+    // ===== COPY LINK =====
+    function copyLink() {
+      const link = window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(link).then(() => {
+          alert('Link copied! 📋');
+        }).catch(() => {
+          alert('Unable to copy. Please try manually.');
+        });
+      } else {
+        alert('Copy not supported on this device');
+      }
+    }
+
+    // ===== OPEN IMAGE =====
+    function openImage(src) {
+      window.open(src, '_blank');
+    }
+
+    // ===== COUNTDOWN TIMER =====
+    function updateCountdown() {
+      const poojaDate = new Date('April 07, 2027 06:00:00').getTime();
+      
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = poojaDate - now;
+
+        document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('seconds').textContent = Math.floor((distance % (1000 * 60)) / 1000);
+      }, 1000);
+    }
+
+    // ===== INITIALIZE =====
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      updateCountdown();
+    });
+  </script>
 </body>
+
 </html>
