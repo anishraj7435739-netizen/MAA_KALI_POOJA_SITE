@@ -345,7 +345,33 @@
       border: none;
       border-radius: 10px;
     }
+    
+/* ===== MANTRA AUDIO PLAYER ===== */
+.mantra-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
 
+.mantra-player {
+  background: linear-gradient(135deg, #fff8f0, #ffe8d1);
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid var(--accent-color);
+  text-align: center;
+}
+
+.mantra-player h3 {
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
     /* ===== DONATION ===== */
     .donate-section {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -637,6 +663,7 @@
     <a href="#location">Location</a>
     <a href="#donate">Donate</a>
     <a href="#contact">Contact</a>
+    <a href="#mantras">Mantras</a>
   </nav>
 
   <!-- ABOUT SECTION -->
@@ -832,7 +859,26 @@
       <a href="https://www.youtube.com/watch?v=cerKiPGqPeQ&list=RDcerKiPGqPeQ&start_radio=1" target="_blank" class="btn btn-primary">▶️ Listen on YouTube</a>
     </div>
   </section>
-
+  <!-- MANTRA AUDIO PLAYER SECTION -->
+<section id="mantras">
+  <h2 class="section-title">🎵 Sacred Mantras</h2>
+  
+  <div class="card">
+    <h2>Chant with Devotion</h2>
+    <p style="margin-bottom: 20px;">Listen to sacred mantras dedicated to Maa Kali.</p>
+    
+    <div class="mantra-container">
+      <!-- Mantra 1 -->
+      <div class="mantra-player">
+        <h3>🔱 Maa Kali Mantra</h3>
+        <audio controls>
+          <source src="media1/mantra.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </div>
+</section>
+  
   <!-- LOCATION SECTION -->
   <section id="location">
     <h2 class="section-title">📍 Location</h2>
